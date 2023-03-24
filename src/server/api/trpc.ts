@@ -39,7 +39,7 @@ const createInnerTRPCContext = (_opts: CreateContextOptions) => {
  *
  * @see https://trpc.io/docs/context
  */
-export const createTRPCContext = (_opts: CreateNextContextOptions) => {
+export const createTRPCContext = (_opts: FetchCreateContextFnOptions) => {
   return createInnerTRPCContext({});
 };
 
@@ -53,6 +53,7 @@ export const createTRPCContext = (_opts: CreateNextContextOptions) => {
 import { initTRPC } from "@trpc/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
+import { FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch";
 
 const t = initTRPC.context<typeof createTRPCContext>().create({
   transformer: superjson,
