@@ -2,7 +2,7 @@ import { fetchRequestHandler } from '@trpc/server/adapters/fetch';
 import { env } from "~/env.mjs";
 import { createTRPCContext } from "~/server/api/trpc";
 import { appRouter } from "~/server/api/root";
-import { NextRequest } from 'next/server';
+import type { NextRequest } from 'next/server';
 
 export const config = {
   runtime: "edge",

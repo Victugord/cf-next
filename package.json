@@ -6,7 +6,9 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "typecheck":"tsc --noEmit",
+    "build:edge":"npx @cloudflare/next-on-pages --experimental-minify"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.28.0",
@@ -41,3 +43,4 @@
     "initVersion": "7.8.0"
   }
 }
+
